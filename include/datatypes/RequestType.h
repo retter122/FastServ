@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stdint.h>
-#include <sstream>
 #include <map>
 #include <string.h>
 
@@ -102,17 +101,16 @@ namespace Request {
 	class Request {
 	private:
 		StatusCode status_code;
-		std::stringstream data;
+		std::string data;
 	
 	public:
-		Request(): status_code(StatusCode::OK), data("") {}
-		Request(StatusCode _status_code): status_code(_status_code), data("") {}
-		Request(StatusCode _status_code, const std::stringstream& _data): status_code(_status_code), data(_data.str()) {}
+		Request(): status_code(StatusCode::OK), data(0) {}
+		Request(StatusCode _status_code): status_code(_status_code), data(0) {}
+		Request(StatusCode _status_code, const std::string& _data): status_code(_status_code), data(_data) {}
 
 		StatusCode get_status_code();
 
 		std::string get_text();
 		std::map<std::string, std::string> get_json();
-		std::istream get_stream();
 	};
 }

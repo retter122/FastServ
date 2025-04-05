@@ -7,6 +7,4 @@
 
 namespace FastServ {
 	ErrState init();
-
-	FastServSocket get_socket();
 }
