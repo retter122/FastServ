@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include <map>
-#include <string.h>
+#include <string>
 
 
 namespace Request {
@@ -104,8 +104,8 @@ namespace Request {
 		std::string data;
 	
 	public:
-		Request(): status_code(StatusCode::OK), data(0) {}
-		Request(StatusCode _status_code): status_code(_status_code), data(0) {}
+		Request(): status_code(StatusCode::OK), data("") {}
+		Request(StatusCode _status_code): status_code(_status_code), data("") {}
 		Request(StatusCode _status_code, const std::string& _data): status_code(_status_code), data(_data) {}
 
 		StatusCode get_status_code();
