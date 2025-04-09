@@ -4,7 +4,6 @@
 #include <map>
 
 #include "datatypes/RequestType.h"
-#include "datatypes/FastServType.h"
 
 
 namespace Request {
