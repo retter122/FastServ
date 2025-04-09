@@ -4,6 +4,8 @@
 #include <map>
 #include <string>
 
+#include "JsonType.h"
+
 
 namespace Request {
 	enum class RequestType { 
@@ -110,7 +112,7 @@ namespace Request {
 
 		StatusCode get_status_code();
 
-		std::map<std::string, std::string> get_headers();
-		std::map<std::string, std::string> get_json();
+		Json::Json get_headers();
+		Json::Json get_json();
 	};
 }
