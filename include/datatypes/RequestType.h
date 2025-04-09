@@ -103,16 +103,21 @@ namespace Request {
 	class Request {
 	private:
 		StatusCode status_code;
+
 		std::string headers;
+		std::string body;
 	
 	public:
-		Request(): status_code(StatusCode::OK), headers("") {}
-		Request(StatusCode _status_code): status_code(_status_code), headers("") {}
-		Request(StatusCode _status_code, const std::string& _headers): status_code(_status_code), headers(_headers) {}
+		Request(): status_code(StatusCode::OK), headers(""), body("") {}
+		Request(StatusCode _status_code): status_code(_status_code), headers(""), body("") {}
+		Request(StatusCode _status_code, const std::string& _headers): status_code(_status_code), headers(_headers), body("") {}
+		Request(StatusCode _status_code, const std::string& _headers, const std::string& _body): status_code(_status_code), headers(_headers), body(_body) {}
 
 		StatusCode get_status_code();
 
 		Json::Json get_headers();
 		Json::Json get_json();
+
+		std::string get_content();
 	};
 }

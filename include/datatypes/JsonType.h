@@ -40,7 +40,7 @@ namespace Json {
         Json& operator[](uint32_t _idx);
         Json& operator[](const std::string& _key);
 
-        operator std::string() const { return this->deserialize(); }
+        operator std::string() const { return this->get_inner_as_str(); }
 
         Json() : type(JsonType::JSON_NONE), inner_map({}), inner_list(0), inner_str("") {}
 
